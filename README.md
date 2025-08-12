@@ -50,17 +50,18 @@ spam_lr_tfidf.joblib
 threshold_lr.json # {"threshold": 0.57}
 
 **reports/**
+
 spam_detector_report_v1.docx
 spam_detector_report_v2.html
 spam_detector_report_v2.docx
 
-**app.py
+app.py
 
 requirements.txt
 
 LICENSE
 
-README.md**
+README.md
 
 ---
 
@@ -77,46 +78,31 @@ python app.py
 
 1. Open notebooks/spam_detector_v1.ipynb in Colab.
 2. Run cells through:
-   
-   cleaning + stratified split
-   
-   TF-IDF + model training (NB and/or LR)
-   
-   threshold tuning on validatioN
-   
-   final evaluation on test
-   
-   save pipeline + threshold to model/
-   
-   launch Gradio demo
-   
-4. (Optional) regenerate reports in reports/.
+    cleaning + stratified split
+    TF-IDF + model training (NB and/or LR)
+    threshold tuning on validatioN
+    final evaluation on test
+    save pipeline + threshold to model/
+    launch Gradio demo
+3. (Optional) regenerate reports in reports/.
 
 ---
 
 ## Deploy options
 
-Colab (ephemeral): demo.launch(share=True)
-
-public link dies when runtime sleeps.
-
-Local: python app.py
-
-Hugging Face Spaces (recommended for a permanent link):
-
-Create a Gradio Space and upload: app.py, requirements.txt, and files under model/.
+1. Colab (ephemeral): demo.launch(share=True)
+2. public link dies when runtime sleeps.
+3. Local: python app.py
+4. Hugging Face Spaces (recommended for a permanent link):
+5. Create a Gradio Space and upload: app.py, requirements.txt, and files under model/.
 
 
 ## requirements.txt
 
 gradio
-
 scikit-learn
-
 joblib
-
 numpy
-
 scipy
 
 ---
@@ -125,11 +111,8 @@ scipy
 
 1. Dataset is imbalanced (~12.5% spam) → use F1/PR-AUC + threshold tuning (not accuracy only).
 2. Some obfuscated adult/promo spam can slip through. Next steps that typically help:
-   
       Add character n-grams (3–5) to TF-IDF (captures “txt”, “150p”, weird encodings).
-   
       Try probability calibration if you need well-calibrated P(spam).
-   
       Light normalization (mask URLs/phones), then retrain/tune.
 
 ---
@@ -143,7 +126,6 @@ MIT — see LICENSE.
 ## Changelog
 
 v1: NB baseline + threshold tuning + report.
-
 v2: Add Logistic Regression + app toggle; big recall/F1 boost.
 
 ---
