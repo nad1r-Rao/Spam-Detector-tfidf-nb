@@ -39,29 +39,23 @@ v2 adds **Logistic Regression (class_weight="balanced")** and a **model toggle**
 ## Repo structure
 
 **notebooks/**
-
 spam_detector_v1.ipynb # full walkthrough (clean → train → tune → eval → save → demo)
 
 **model/**
-
 spam_nb_tfidf.joblib
 threshold.json # {"threshold": 0.13}
 spam_lr_tfidf.joblib
 threshold_lr.json # {"threshold": 0.57}
 
 **reports/**
-
 spam_detector_report_v1.docx
 spam_detector_report_v2.html
 spam_detector_report_v2.docx
 
-app.py
-
-requirements.txt
-
-LICENSE
-
-README.md
+**app.py**
+**requirements.txt**
+**LICENSE**
+**README.md**
 
 ---
 
@@ -96,13 +90,18 @@ python app.py
 4. Hugging Face Spaces (recommended for a permanent link):
 5. Create a Gradio Space and upload: app.py, requirements.txt, and files under model/.
 
+---
 
 ## requirements.txt
 
 gradio
+
 scikit-learn
+
 joblib
+
 numpy
+
 scipy
 
 ---
@@ -126,6 +125,7 @@ MIT — see LICENSE.
 ## Changelog
 
 v1: NB baseline + threshold tuning + report.
+
 v2: Add Logistic Regression + app toggle; big recall/F1 boost.
 
 ---
