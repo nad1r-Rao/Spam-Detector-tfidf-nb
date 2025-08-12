@@ -39,9 +39,11 @@ v2 adds **Logistic Regression (class_weight="balanced")** and a **model toggle**
 ## Repo structure
 
 **notebooks/**
+
 spam_detector_v1.ipynb # full walkthrough (clean → train → tune → eval → save → demo)
 
 **model/**
+
 spam_nb_tfidf.joblib
 threshold.json # {"threshold": 0.13}
 spam_lr_tfidf.joblib
@@ -53,8 +55,11 @@ spam_detector_report_v2.html
 spam_detector_report_v2.docx
 
 **app.py**
+
 **requirements.txt**
+
 **LICENSE**
+
 **README.md**
 
 ---
@@ -71,13 +76,21 @@ python app.py
 ## Reproduce / retrain (Colab)
 
 1. Open notebooks/spam_detector_v1.ipynb in Colab.
+  
 2. Run cells through:
+   
     cleaning + stratified split
+   
     TF-IDF + model training (NB and/or LR)
+   
     threshold tuning on validatioN
+   
     final evaluation on test
+   
     save pipeline + threshold to model/
+   
     launch Gradio demo
+
 3. (Optional) regenerate reports in reports/.
 
 ---
@@ -110,8 +123,11 @@ scipy
 
 1. Dataset is imbalanced (~12.5% spam) → use F1/PR-AUC + threshold tuning (not accuracy only).
 2. Some obfuscated adult/promo spam can slip through. Next steps that typically help:
+   
       Add character n-grams (3–5) to TF-IDF (captures “txt”, “150p”, weird encodings).
+   
       Try probability calibration if you need well-calibrated P(spam).
+   
       Light normalization (mask URLs/phones), then retrain/tune.
 
 ---
