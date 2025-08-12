@@ -1,8 +1,8 @@
 import gradio as gr
 import joblib, json
 
-pipe = joblib.load("spam_nb_tfidf.joblib")
-with open("threshold.json") as f:
+pipe = joblib.load("model/spam_nb_tfidf.joblib")
+with open("model/threshold.json") as f:
     T = json.load(f)["threshold"]
 
 def predict_sms(msg: str):
